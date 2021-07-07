@@ -13,7 +13,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="306dp">
+            android:layout_height="300dp">
 
             <EditText
                 android:id="@+id/ed_result"
@@ -23,15 +23,14 @@
                 android:ems="10"
                 android:enabled="false"
                 android:inputType="number"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.136"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
-                app:layout_constraintVertical_bias="0.597" />
+                app:layout_constraintVertical_bias="0.6" />
 
             <EditText
                 android:id="@+id/ed_m"
@@ -69,7 +68,7 @@
                 android:id="@+id/ed_n"
                 android:layout_width="91dp"
                 android:layout_height="89dp"
-                android:layout_marginStart="196dp"
+                android:layout_marginStart="5dp"
                 android:background="@drawable/custom_edittext_background"
                 android:ems="10"
                 android:inputType="number"
@@ -77,22 +76,23 @@
                 android:paddingRight="10dp"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ed_a"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.368" />
+                app:layout_constraintVertical_bias="0.369" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MOD"
-                android:textSize="32sp"
+                android:textSize="28sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/ed_n"
                 app:layout_constraintHorizontal_bias="0.816"
                 app:layout_constraintStart_toEndOf="@+id/ed_a"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.422" />
+                app:layout_constraintVertical_bias="0.45" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -107,6 +107,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <RadioGroup
+            android:layout_marginTop="20dp"
             android:id="@+id/rg_modulo"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -147,7 +148,8 @@
             android:id="@+id/btn_calc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CALC" />
+            android:backgroundTint="@color/black"
+            android:text="TÍNH TOÁN" />
 
         <TextView
             android:id="@+id/tv_infor"
