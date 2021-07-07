@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modulo.ModuloActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="306dp">
+
+            <EditText
+                android:id="@+id/ed_result"
+                android:layout_width="91dp"
+                android:layout_height="89dp"
+                android:background="@drawable/custom_edittext_background"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.136"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:layout_constraintVertical_bias="0.597" />
+
+            <EditText
+                android:id="@+id/ed_m"
+                android:layout_width="91dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/custom_edittext_background"
+                android:ems="10"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ed_a"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.15" />
+
+            <EditText
+                android:id="@+id/ed_a"
+                android:layout_width="91dp"
+                android:layout_height="89dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/custom_edittext_background"
+                android:ems="10"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.368" />
+
+            <EditText
+                android:id="@+id/ed_n"
+                android:layout_width="91dp"
+                android:layout_height="89dp"
+                android:layout_marginStart="196dp"
+                android:background="@drawable/custom_edittext_background"
+                android:ems="10"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ed_a"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.368" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MOD"
+                android:textSize="32sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ed_n"
+                app:layout_constraintHorizontal_bias="0.816"
+                app:layout_constraintStart_toEndOf="@+id/ed_a"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.422" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="75dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="84dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ed_a"
+                app:layout_constraintVertical_bias="0.493"
+                app:srcCompat="@drawable/ic_baseline_drag_handle_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RadioGroup
+            android:id="@+id/rg_modulo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/rb_simplify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hạ bậc" />
+
+            <RadioButton
+                android:id="@+id/rb_fermat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Định lý Fermat nhỏ" />
+
+            <RadioButton
+                android:id="@+id/rb_euler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Định lý Euler" />
+
+            <RadioButton
+                android:id="@+id/rb_euclid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Định lý Euclid mở rộng" />
+
+            <RadioButton
+                android:id="@+id/rb_chinese_remainder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phần dư Trung Hoa" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_calc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CALC" />
+
+        <TextView
+            android:id="@+id/tv_infor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>
