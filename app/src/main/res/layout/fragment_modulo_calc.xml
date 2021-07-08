@@ -158,5 +158,22 @@
             android:textSize="28sp"
             android:visibility="gone" />
 
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <TableLayout
+                android:id="@+id/tb_euclid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:text="TextView"
+            android:visibility="invisible" />
+
     </LinearLayout>
 </ScrollView>

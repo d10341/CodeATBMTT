@@ -1,9 +1,11 @@
 package com.lx2td.myapplication.modulo;
 
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +13,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.lx2td.myapplication.R;
+import com.lx2td.myapplication.classical.ClassicalActivity;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +46,8 @@ public class ModuloCalcFragment extends Fragment {
     Button btn_calc;
     RadioGroup group;
     TextView infor;
+    TableLayout table;
+
 
     public ModuloCalcFragment() {
         // Required empty public constructor
@@ -87,6 +95,7 @@ public class ModuloCalcFragment extends Fragment {
         btn_calc = view.findViewById(R.id.btn_calc);
         group = view.findViewById(R.id.rg_modulo);
         infor = view.findViewById(R.id.tv_infor);
+        table = view.findViewById(R.id.tb_euclid);
 
         if (group!= null)
         {
@@ -103,6 +112,7 @@ public class ModuloCalcFragment extends Fragment {
                     n.setText("");
                     result.setText("");
                     infor.setText("");
+                    table.removeAllViewsInLayout();
 
                     infor.setTextSize(28);
 
@@ -213,6 +223,7 @@ public class ModuloCalcFragment extends Fragment {
                             m.setText("-1");
                             m.setEnabled(false);
                             btn_calc.setOnClickListener(v ->{
+                                table.removeAllViewsInLayout();
                                 if(validate())
                                 {
                                     String text = "";
@@ -220,61 +231,80 @@ public class ModuloCalcFragment extends Fragment {
                                     if (Modulo.extendedEuclid(Long.parseLong(a.getText().toString()), Long.parseLong(n.getText().toString())) != -1)
                                     {
                                         result.setText(String.valueOf(Modulo.extendedEuclid(Long.parseLong(a.getText().toString()), Long.parseLong(n.getText().toString()))));
-                                        text = "Bảng Euclid mở rộng :\n";
+                                        text = "Bảng Euclid mở rộng :\n\n";
 
-                                        text += StringUtils.center("Q", 13);text += "|";
-                                        text += StringUtils.center("A1", 13);text += "|";
-                                        text += StringUtils.center("A2", 13);text += "|";
-                                        text += StringUtils.center("A3", 13);text += "|";
-                                        text += StringUtils.center("B1", 13);text += "|";
-                                        text += StringUtils.center("B2", 13);text += "|";
-                                        text += StringUtils.center("B3", 13);text += "|";
-                                        text += "\n";
-                                        text += StringUtils.center("_", 13);text += "|";
-                                        text += StringUtils.center("1", 13);text += "|";
-                                        text += StringUtils.center("0", 13);text += "|";
-                                        text += StringUtils.center(n.getText().toString(), 13);text += "|";
-                                        text += StringUtils.center("0", 13);text += "|";
-                                        text += StringUtils.center("1", 13);text += "|";
-                                        text += StringUtils.center(a.getText().toString(),  13);text += "|";
+                                        List<String> str = new ArrayList<>();
+                                        str.add("Q");
+                                        str.add("A1");
+                                        str.add("A2");
+                                        str.add("A3");
+                                        str.add("B1");
+                                        str.add("B2");
+                                        str.add("B3");
+                                        drawRow(str);
 
-                                        for(int i = 0; i < table.size(); i++)
-                                        {
-                                            if(i % 7 == 0) text += "\n";
-                                            text += StringUtils.center(table.get(i).toString(), 13);
-                                            text += "|";
+                                        str.clear();
+                                        str.add("_");
+                                        str.add("1");
+                                        str.add("0");
+                                        str.add(n.getText().toString());
+                                        str.add("0");
+                                        str.add("1");
+                                        str.add(a.getText().toString());
+                                        drawRow(str);
+
+                                        int c = 0;
+                                        List<Long> row = new ArrayList<>();
+                                        for(int i = 0; i < table.size(); i++){
+                                            if(c == 7)
+                                            {
+                                                drawRow(row);
+                                                c = 0;
+                                                row.clear();
+                                            }
+                                            row.add(table.get(i));
+                                            c++;
                                         }
+                                        drawRow(row);
                                     }
                                     else {
-                                        text += "Không có nghịch đảo :\n";
-
-                                        text += StringUtils.center("Q", 13);text += "|";
-                                        text += StringUtils.center("A1", 13);text += "|";
-                                        text += StringUtils.center("A2", 13);text += "|";
-                                        text += StringUtils.center("A3", 13);text += "|";
-                                        text += StringUtils.center("B1", 13);text += "|";
-                                        text += StringUtils.center("B2", 13);text += "|";
-                                        text += StringUtils.center("B3", 13);text += "|";
-                                        text += "\n";
-                                        text += StringUtils.center("_", 13);text += "|";
-                                        text += StringUtils.center("1", 13);text += "|";
-                                        text += StringUtils.center("0", 13);text += "|";
-                                        text += StringUtils.center(n.getText().toString(), 13);text += "|";
-                                        text += StringUtils.center("0", 13);text += "|";
-                                        text += StringUtils.center("1", 13);text += "|";
-                                        text += StringUtils.center(a.getText().toString(),  13);text += "|";
-
-                                        for(int i = 0; i < table.size(); i++)
-                                        {
-                                            if(i % 7 == 0) text += "\n";
-                                            text += StringUtils.center(table.get(i).toString(), 13);
-                                            text += "|";
-                                        }
-
                                         result.setText("x");
+                                        text += "Không có nghịch đảo :\n\n";
 
+                                        List<String> str = new ArrayList<>();
+                                        str.add("Q");
+                                        str.add("A1");
+                                        str.add("A2");
+                                        str.add("A3");
+                                        str.add("B1");
+                                        str.add("B2");
+                                        str.add("B3");
+                                        drawRow(str);
+
+                                        str.clear();
+                                        str.add("_");
+                                        str.add("1");
+                                        str.add("0");
+                                        str.add(n.getText().toString());
+                                        str.add("0");
+                                        str.add("1");
+                                        str.add(a.getText().toString());
+                                        drawRow(str);
+
+                                        int c = 0;
+                                        List<Long> row = new ArrayList<>();
+                                        for(int i = 0; i < table.size(); i++){
+                                            if(c == 7)
+                                            {
+                                                drawRow(row);
+                                                c = 0;
+                                                row.clear();
+                                            }
+                                            row.add(table.get(i));
+                                            c++;
+                                        }
+                                        drawRow(row);
                                     }
-                                    infor.setTextSize(14);
                                     infor.setText(text);
                                     infor.setVisibility(View.VISIBLE);
                                 }
@@ -322,5 +352,27 @@ public class ModuloCalcFragment extends Fragment {
             return false;
         }
         return true;
+    }
+
+    void drawRow(List<?> list){
+        GradientDrawable gd = new GradientDrawable();
+        gd.setColor(0x00000000); // Changes this drawbale to use a single color instead of a gradient
+        gd.setCornerRadius(0);
+        gd.setStroke(1, 0xFF000000);
+
+        TableRow row = new TableRow(getContext());
+
+        for (int i = 0; i < list.size(); i++) {
+            TextView cell = new TextView(getContext());
+            cell.setText(""+list.get(i).toString());
+            cell.setTextSize(14);
+            cell.setWidth(150);
+            cell.setHeight(150);
+            cell.setBackground(gd);
+            cell.setGravity(Gravity.CENTER);
+            row.addView(cell);
+        }
+
+        table.addView(row);
     }
 }

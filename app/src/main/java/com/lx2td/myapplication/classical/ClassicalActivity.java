@@ -110,11 +110,11 @@ public class ClassicalActivity extends AppCompatActivity {
                         break;
                     case R.id.rb_rail_fence:
                         btn_cipher.setOnClickListener(v ->{
+                            table.removeAllViewsInLayout();
                             if(validate())
                             {
                                 char[][] matrix = new char[20][20];
                                 cipher.setText(Classical.railfenceCipher(plain.getText().toString().replaceAll("\\s+",""),Integer.parseInt(key.getText().toString()), matrix).replaceAll("\\s+",""));
-                                table.removeAllViewsInLayout();
                                 int rows = Integer.parseInt(key.getText().toString());
                                 int columns = plain.getText().toString().replaceAll("\\s+","").length() / Integer.parseInt(key.getText().toString());
                                 if(plain.getText().toString().replaceAll("\\s+","").length() % Integer.parseInt(key.getText().toString()) != 0) columns += 1;
@@ -122,11 +122,11 @@ public class ClassicalActivity extends AppCompatActivity {
                             }
                         });
                         btn_decipher.setOnClickListener(v ->{
+                            table.removeAllViewsInLayout();
                             if(validate())
                             {
                                 char[][] matrix = new char[20][20];
                                 cipher.setText(Classical.railfenceDecipher(plain.getText().toString().replaceAll("\\s+",""),Integer.parseInt(key.getText().toString()), matrix).replaceAll("\\s+",""));
-                                table.removeAllViewsInLayout();
                                 int columns = Integer.parseInt(key.getText().toString());
                                 int rows = plain.getText().toString().replaceAll("\\s+","").length() / Integer.parseInt(key.getText().toString());
                                 if(plain.getText().toString().replaceAll("\\s+","").length() % Integer.parseInt(key.getText().toString()) != 0) rows += 1;

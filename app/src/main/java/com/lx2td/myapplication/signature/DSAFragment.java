@@ -109,8 +109,8 @@ public class DSAFragment extends Fragment {
                 long s2 = (hm+xA*r)%q;
 
                 long s = (s1*s2)%q;
-                text += "\ns = [k ^ -1 * (H(M) + xA * r)] mod q \n   = (k ^ -1 mod q) * [(H(M) + xA * r) mod q] \n   = (" + k + " ^ " + (-1)
-                        + " mod " + q + ") * [("+ hm +" + " + xA + " * " + r + ") mod " + q + "] \n   = " + s1 + " * " + s2 + " \n   = " + s + endl + endl;
+                text += "\ns = [k ^ -1 * (H(M) + xA * r)] mod q \n   = {(k ^ -1 mod q) * [(H(M) + xA * r) mod q]} mod q \n   = {(" + k + " ^ " + (-1)
+                        + " mod " + q + ") * [("+ hm +" + " + xA + " * " + r + ") mod " + q + "]} mod " + q + "\n   = (" + s1 + " * " + s2 + ") mod " + q + " \n   = " + s + endl + endl;
 
                 text += "==> Chữ ký số : (r, s) = (" + r + ", " + s + ")"  + endl + endl + endl;
 
@@ -129,9 +129,10 @@ public class DSAFragment extends Fragment {
                 long gu1 = Modulo.simplify(g,u1,p);
                 long yu2 = Modulo.simplify(y,u2,p);
                 long v = ((gu1*yu2)%p)%q;
-                text += "\nv = [(g ^ u1 * y ^ u2) mod p] mod q \n   = [(g ^ u1 mod p) * (y ^ u2 mod p)] mod q \n   = [(" + g + " ^ " + u1 + " mod " +
+                text += "\nv = [(g ^ u1 * y ^ u2) mod p] mod q \n   = {[(g ^ u1 mod p) * (y ^ u2 mod p)] mod p} mod q \n   = {[(" + g + " ^ " + u1 + " mod " +
                         p + ") * " + "(" + y + " ^ " + u2 + " mod " +
-                        p + ")] mod " + q + " \n   = (" + gu1 + " * " + yu2 + ") mod " + q + " \n   = " + (gu1*yu2) + " mod " + q + " \n   = " + v + endl + endl;
+                        p + ")] mod " + p + "} mod " + q + " \n   = [(" + gu1 + " * " + yu2 + ") mod " + p + "] mod " + q + " \n   = " + (gu1*yu2)%p + " mod " +
+                        q + " \n   = " + v + endl + endl;
                 if(v==rFake)
                     text +=  "Do v : " + v + " = r' : " + rFake + " nên đúng";
                 else

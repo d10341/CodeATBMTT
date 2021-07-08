@@ -274,6 +274,12 @@
             android:textSize="28sp"
             android:visibility="gone" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:text="TextView"
+            android:visibility="invisible" />
+
     </LinearLayout>
 </ScrollView>
 
