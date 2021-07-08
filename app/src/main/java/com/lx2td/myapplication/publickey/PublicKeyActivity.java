@@ -144,7 +144,7 @@ public class PublicKeyActivity extends AppCompatActivity {
             }
         });
 
-
+        ((RadioButton) findViewById(R.id.rb_dif_hel)).performClick();
 
 
 

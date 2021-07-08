@@ -138,14 +138,15 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="13dp"
                 android:layout_marginLeft="13dp"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="42dp"
                 android:layout_marginEnd="28dp"
                 android:layout_toStartOf="@+id/ed_prim_n"
                 android:layout_toEndOf="@+id/ed_prim_a"
                 android:layout_toRightOf="@id/ed_prim_a"
+                android:gravity="center"
                 android:lines="3"
-                android:text="có là căn nguyên thủy của không ?"
-                android:textSize="18sp" />
+                android:text="có là căn nguyên thủy của"
+                android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/iv_prim_result"

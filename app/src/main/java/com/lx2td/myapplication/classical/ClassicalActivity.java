@@ -158,6 +158,8 @@ public class ClassicalActivity extends AppCompatActivity {
             }
         });
 
+        ((RadioButton) findViewById(R.id.rb_ceasar)).performClick();
+
     }
 
     void drawTable(char[][] matrix, int rows, int columns){

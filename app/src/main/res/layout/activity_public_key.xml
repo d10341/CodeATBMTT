@@ -42,7 +42,7 @@
             android:id="@+id/a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="10"
+            android:weightSum="10"
             android:orientation="horizontal">
 
             <TextView
@@ -66,16 +66,16 @@
         <LinearLayout
             android:id="@+id/xA"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="10"
+            android:layout_height="wrap_content"
+            android:weightSum="10"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:text="xA"
                 android:gravity="center"
+                android:text="xA"
                 android:textSize="18sp" />
 
             <EditText
@@ -100,6 +100,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:gravity="center"
                 android:text="xB"
                 android:textSize="18sp" />
 
@@ -117,7 +118,7 @@
             android:id="@+id/k"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="10"
+            android:weightSum="10"
             android:orientation="horizontal"
             android:visibility="gone">
 
@@ -125,6 +126,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:gravity="center"
                 android:text="k"
                 android:textSize="18sp" />
 
@@ -142,7 +144,7 @@
             android:id="@+id/M"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="10"
+            android:weightSum="10"
             android:orientation="horizontal"
             android:visibility="gone">
 
@@ -150,6 +152,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:gravity="center"
                 android:text="M"
                 android:textSize="18sp" />
 

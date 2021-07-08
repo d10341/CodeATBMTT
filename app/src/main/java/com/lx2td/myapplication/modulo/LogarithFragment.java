@@ -209,6 +209,9 @@ public class LogarithFragment extends Fragment {
                 }
             });
         }
+
+        ((RadioButton) view.findViewById(R.id.rb_primroot)).performClick();
+
         return view;
     }
 

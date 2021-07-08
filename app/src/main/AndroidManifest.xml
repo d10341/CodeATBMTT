@@ -10,10 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity android:name=".publickey.PublicKeyActivity"></activity>
-        <activity android:name=".Activity" />
         <activity android:name=".modulo.ModuloActivity" />
         <activity android:name=".signature.SignatureActivity" />
-        <activity android:name=".blockcipher.BlockCipherActivity" />
         <activity android:name=".classical.ClassicalActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

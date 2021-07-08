@@ -282,6 +282,9 @@ public class ModuloCalcFragment extends Fragment {
                 }
             });
         }
+
+        ((RadioButton) view.findViewById(R.id.rb_simplify)).performClick();
+
         return view;
     }
 
