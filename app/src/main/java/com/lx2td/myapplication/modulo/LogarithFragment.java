@@ -161,7 +161,7 @@ public class LogarithFragment extends Fragment {
                                             text += a + " ^ " + t/primes.get(i) + " mod " + mod + " = " + Modulo.simplify(a,t/primes.get(i),mod) + "\n";
                                             if (Modulo.simplify(a,t/primes.get(i),mod) == 1)
                                             {
-                                                text += "\n\ni = " + t/primes.get(i) + " < " + t + " = ø(" + mod + ") là số mũ nhỏ nhất có tính" +
+                                                text += "\n\ni = " + t/primes.get(i) + " < " + t + " = ø(" + mod + ") là số mũ nhỏ nhất có tính " +
                                                         "chất " + a + " ^ i mod " + mod + " = 1, nên " + a + " không là căn nguyên thủy" +
                                                         " của " + mod + "\n";
                                                 break;
