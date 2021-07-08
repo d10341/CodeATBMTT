@@ -271,6 +271,8 @@ public class ModuloCalcFragment extends Fragment {
                                             text += "|";
                                         }
 
+                                        result.setText("x");
+
                                     }
                                     infor.setTextSize(14);
                                     infor.setText(text);
