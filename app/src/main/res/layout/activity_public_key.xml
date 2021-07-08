@@ -7,6 +7,9 @@
     tools:context=".classical.ClassicalActivity">
 
     <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="44dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -23,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="q"
+                android:gravity="center"
                 android:textSize="18sp" />
 
             <EditText
@@ -46,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="a"
+                android:gravity="center"
                 android:textSize="18sp" />
 
             <EditText
@@ -70,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="xA"
+                android:gravity="center"
                 android:textSize="18sp" />
 
             <EditText
@@ -86,7 +92,7 @@
             android:id="@+id/xB"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="10"
+            android:weightSum="10"
             android:orientation="horizontal"
             android:visibility="gone">
 
@@ -166,12 +172,16 @@
                 android:id="@+id/rb_dif_hel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginLeft="10dp"
                 android:text="Diffie-Hellman" />
 
             <RadioButton
                 android:id="@+id/rb_elgamal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="16sp"
                 android:text="ElGamal" />
 
         </RadioGroup>
@@ -180,7 +190,8 @@
             android:id="@+id/btn_public_calc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CALC" />
+            android:layout_margin="20dp"
+            android:text="Tính Toán " />
 
         <TextView
             android:id="@+id/tv_public_infor"
