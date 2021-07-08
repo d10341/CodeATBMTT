@@ -139,7 +139,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="10"
+            android:weightSum="10"
             android:orientation="horizontal">
 
             <Button
@@ -167,17 +167,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center">
 
-            <RelativeLayout
+            <TableLayout
+                android:id="@+id/table"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <TableLayout
-                    android:id="@+id/table"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </RelativeLayout>
+                android:layout_height="match_parent" />
         </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:text="TextView"
+            android:visibility="invisible" />
 
     </LinearLayout>
 </ScrollView>
